@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="AllTests" tests="8" assertions="16" failures="0" errors="0" time="2.020968">
+    <testsuite name="AllServiceTest" file="/var/www/phpUnit/Test/ServiceTest/AllServiceTest.php" tests="3" assertions="5" failures="0" errors="0" time="0.979730">
+      <testcase name="testLoginAction" class="AllServiceTest" file="/var/www/phpUnit/Test/ServiceTest/AllServiceTest.php" line="7" assertions="2" time="0.365468"/>
+      <testcase name="testGetUserByUserName" class="AllServiceTest" file="/var/www/phpUnit/Test/ServiceTest/AllServiceTest.php" line="16" assertions="2" time="0.310762"/>
+      <testcase name="testGetUserById" class="AllServiceTest" file="/var/www/phpUnit/Test/ServiceTest/AllServiceTest.php" line="23" assertions="1" time="0.303500"/>
+    </testsuite>
+    <testsuite name="UserDaoTest" file="/var/www/phpUnit/Test/DaoTest/UserDaoTest.php" tests="3" assertions="7" failures="0" errors="0" time="0.653985">
+      <testcase name="testFindUserByName" class="UserDaoTest" file="/var/www/phpUnit/Test/DaoTest/UserDaoTest.php" line="19" assertions="2" time="0.176180"/>
+      <testcase name="testFindUser" class="UserDaoTest" file="/var/www/phpUnit/Test/DaoTest/UserDaoTest.php" line="25" assertions="2" time="0.293275"/>
+      <testcase name="testDeleteUser" class="UserDaoTest" file="/var/www/phpUnit/Test/DaoTest/UserDaoTest.php" line="31" assertions="3" time="0.184530"/>
+    </testsuite>
+    <testsuite name="PostDaoTest" file="/var/www/phpUnit/Test/DaoTest/PostDaoTest.php" tests="2" assertions="4" failures="0" errors="0" time="0.387253">
+      <testcase name="testFindPost" class="PostDaoTest" file="/var/www/phpUnit/Test/DaoTest/PostDaoTest.php" line="19" assertions="2" time="0.169105"/>
+      <testcase name="testDeletePost" class="PostDaoTest" file="/var/www/phpUnit/Test/DaoTest/PostDaoTest.php" line="25" assertions="2" time="0.218148"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

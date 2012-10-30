@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<project name="phpUnit" description="Simple test build file" default="test" >
+
+	<target name="test">
+		<phpunit haltonfailure="true" haltonerror="true">
+			<formatter type="plain" usefile="false" />
+			<batchtest>
+				<fileset dir=".">
+					<include name="**/*Test.php"/>
+					<exclude name="**/Base*.php"/>
+				</fileset>
+			</batchtest>
+		</phpunit>
+	</target>
+
+
+</project>
