@@ -1,9 +1,20 @@
 <?xml version="1.0"?>
 
-<project name="phpUnit" description="Simple test build file" default="test" >
+<project name="phpUnit" description="Simple test build file" default="coverage-report" >
 
-	<target name="test">
-		<phpunit haltonfailure="true" haltonerror="true">
+	<target name="prepare">
+    	<mkdir dir="coverage-report"/>
+  	</target>
+
+	<target name="coverage-report" depends="prepare">
+	    <coverage-setup database="./coverage-report/database">
+	      <fileset dir=".">
+	        <include name="*.php"/>
+	        <exclude name="*Test.php"/>
+	      </fileset>
+	    </coverage-setup>
+
+	    <phpunit haltonfailure="true" haltonerror="true" codecoverage="true">
 			<formatter type="plain" usefile="false" />
 			<batchtest>
 				<fileset dir=".">
@@ -12,7 +23,17 @@
 				</fileset>
 			</batchtest>
 		</phpunit>
-	</target>
 
+	    <coverage-report outfile="coverage-report/coverage.xml">
+	      <report styledir="/usr/share/php/data/phing/etc"
+	              todir="coverage-report"/>
+	    </coverage-report>
+
+	    <coverage-threshold
+	    perProject="0"
+	    perClass="0"
+	    perMethod="0"/>
+
+	</target>
 
 </project>
