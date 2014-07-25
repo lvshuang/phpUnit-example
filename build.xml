@@ -8,13 +8,17 @@
     	<mkdir dir="${basedir}/build/coverage"/>
   	</target>
 
-	<target name="coverage-report" depends="prepare">
-	    <!-- <coverage-setup database="${basedir}/build/coverage">
+  	<target name="phpunit" description="Run unit tests with PHPUnit" depends="prepare">
+  		<exec executable="phpunit" failonerror="true"/>
+ 	</target>
+
+	<!-- <target name="coverage-report" depends="prepare">
+	    <coverage-setup database="${basedir}/build/coverage">
 	      <fileset dir=".">
 	        <include name="*.php"/>
 	        <exclude name="*Test.php"/>
 	      </fileset>
-	    </coverage-setup> -->
+	    </coverage-setup>
 
 	    <phpunit haltonfailure="true" haltonerror="true" codecoverage="true">
 			<formatter type="plain" usefile="false" />
@@ -36,6 +40,6 @@
 	    perClass="0"
 	    perMethod="0"/>
 
-	</target>
+	</target> -->
 
 </project>
