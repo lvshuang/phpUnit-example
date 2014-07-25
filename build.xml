@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="phpUnit" default="coverage-report" >
+<project name="phpUnit" default="phpunit" >
 	<target name="clear">
     	<delete dir="${basedir}/build/coverage"/>
   	</target>
