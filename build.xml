@@ -1,45 +1,22 @@
-<?xml version="1.0"?>
-
-<project name="phpUnit" default="phpunit" >
+<project name="Test" default="build" basedir=".">
 	<target name="clear">
-    	<delete dir="${basedir}/build/coverage"/>
-  	</target>
-	<target name="prepare" depends="clear">
-    	<mkdir dir="${basedir}/build/coverage"/>
-  	</target>
+		<delete dir="${basedir}/build/phpcs/"/>
+		<delete dir="${basedir}/build/pdepend/"/>
+	</target>
+	<target name="init" depends="clear">
+		<mkdir dir="${basedir}/build/phpcs/"/>
+		<mkdir dir="${basedir}/build/pdepend/"/>
+	</target>
 
-  	<target name="phpunit" description="Run unit tests with PHPUnit" depends="prepare">
-  		<exec executable="phpunit" failonerror="false"/>
- 	</target>
+	<target name="build" depends="init, test">
+	</target>
 
-	<!-- <target name="coverage-report" depends="prepare">
-	    <coverage-setup database="${basedir}/build/coverage">
-	      <fileset dir=".">
-	        <include name="*.php"/>
-	        <exclude name="*Test.php"/>
-	      </fileset>
-	    </coverage-setup>
-
-	    <phpunit haltonfailure="true" haltonerror="true" codecoverage="true">
-			<formatter type="plain" usefile="false" />
-			<batchtest>
-				<fileset dir=".">
-					<include name="**/*Test.php"/>
-					<exclude name="**/Base*.php"/>
-				</fileset>
-			</batchtest>
-		</phpunit>
-
-	    <coverage-report outfile="coverage-report/coverage.xml">
-	      <report styledir="/usr/share/php/data/phing/etc"
-	              todir="coverage-report"/>
-	    </coverage-report>
-
-	    <coverage-threshold
-	    perProject="0"
-	    perClass="0"
-	    perMethod="0"/>
-
-	</target> -->
+	<target name="test">
+		<exec executable="phpunit" failonerror="true">
+			<arg line="--coverage-clover ${basedir}/build/CodeCoverage/clover.xml 
+				--coverage-html ${basedir}/build/CodeCoverage/ 
+				."/>
+		</exec>
+	</target>
 
 </project>
