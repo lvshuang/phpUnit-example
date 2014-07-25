@@ -1,13 +1,15 @@
 <?xml version="1.0"?>
 
 <project name="phpUnit" default="coverage-report" >
-
-	<target name="prepare">
-    	<mkdir dir="coverage-report"/>
+	<target name="clear">
+    	<delete dir="${basedir}/build/coverage"/>
+  	</target>
+	<target name="prepare" depends="clear">
+    	<mkdir dir="${basedir}/build/coverage"/>
   	</target>
 
 	<target name="coverage-report" depends="prepare">
-	    <coverage-setup database="./coverage-report/database">
+	    <coverage-setup database="${basedir}/build/coverage">
 	      <fileset dir=".">
 	        <include name="*.php"/>
 	        <exclude name="*Test.php"/>
