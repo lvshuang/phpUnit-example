@@ -9,12 +9,12 @@
   	</target>
 
 	<target name="coverage-report" depends="prepare">
-	    <coverage-setup database="${basedir}/build/coverage">
+	    <!-- <coverage-setup database="${basedir}/build/coverage">
 	      <fileset dir=".">
 	        <include name="*.php"/>
 	        <exclude name="*Test.php"/>
 	      </fileset>
-	    </coverage-setup>
+	    </coverage-setup> -->
 
 	    <phpunit haltonfailure="true" haltonerror="true" codecoverage="true">
 			<formatter type="plain" usefile="false" />
