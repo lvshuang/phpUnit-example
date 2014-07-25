@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="phpUnit" description="Simple test build file" default="coverage-report" >
+<project name="phpUnit" description="Simple Test" default="coverage-report" >
 
 	<target name="prepare">
     	<mkdir dir="coverage-report"/>
