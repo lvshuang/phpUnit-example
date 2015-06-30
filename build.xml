@@ -12,7 +12,7 @@
 	</target>
 
 	<target name="test">
-		<exec executable="phpunit" failonerror="true">
+		<exec executable="phpunit" haltonfailure="true">
 			<arg line="--coverage-clover ${basedir}/build/CodeCoverage/clover.xml 
 				--coverage-html ${basedir}/build/CodeCoverage/ 
 				."/>
